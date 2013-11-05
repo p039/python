@@ -33,10 +33,10 @@ When we looked at decimal digits, we saw that it was 10^n .
 And now, with the dice, we're looking at digits base 6.
 So the number of possibilities are going to be 6^n.
 
-Result: Possible sequence of length 5 is 6^5 = 7776 possible seq.
+Result: Possible sequence of length 5 is 6^5 = 7776 possible seqeunces.
 '''
 
 rollN(5)
->>>'2,4,3,5,3'
->>>'5,3,5,5,2c'
+>>>'24353'
+>>>'53532'
 
