@@ -61,7 +61,8 @@ def runSim(goal, numTrials):
     total = 0
     for i in range(numTrials):
         total += getTarget(goal)
-    print 'Average number of tries =', total/float(numTrials)
+    aveNumTries = total/float(numTrials)
+    print 'Probability =', 1.0/aveNumTries #1.0 - could be only one sequence of 11111
 
 runSim('11111', 100)
 runSim('54324', 100)
