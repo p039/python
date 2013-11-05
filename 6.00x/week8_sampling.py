@@ -40,3 +40,28 @@ rollN(5)
 >>>'24353'
 >>>'53532'
 
+'''
+Probability there all ones '11111' is 1/6^5. It's approximately equal to 0.0001286,
+or a simpler way to think about it - 1 out of 7,776 possibilities.
+
+Pretty low value, but no lower than the probability of any other particular
+sequence of five rolls. Let's see the probability is the same in sim model.
+'''
+
+def getTarget(goal):
+    numTries = 0
+    numRolls = len(goal)
+    while True:
+        numTries += 1
+        result = rollN(numRolls)
+        if result == goal:
+            return numTries
+
+def runSim(goal, numTrials):
+    total = 0
+    for i in range(numTrials):
+        total += getTarget(goal)
+    print 'Average number of tries =', total/float(numTrials)
+
+runSim('11111', 100)
+runSim('54324', 100)
