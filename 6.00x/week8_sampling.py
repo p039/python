@@ -79,3 +79,14 @@ possible rolls is 1.
 So we know that the probability of getting at least one 1 must be 1 minus
 the probability of getting no ones: 1 - (5/6)^5
 '''
+
+def atLeastOneOne(numRolls, numTrials):
+    numSuccess = 0
+    for i in range(numTrials):
+        rolls = rollN(numRolls)
+        if '1' in rolls:
+            numSuccess += 1
+        fracSuccess = numSuccess/float(numTrials)
+    print fracSuccess
+
+atLeastOneOne(10, 1000)
