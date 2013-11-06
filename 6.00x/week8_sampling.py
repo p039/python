@@ -66,3 +66,16 @@ def runSim(goal, numTrials):
 
 runSim('11111', 100)
 runSim('54324', 100)
+
+
+'''
+Suppose we want to know the probability of rolling the die five
+times without getting any ones: 5 rolls, no 1.
+1 roll and no 1 => 5/6. If we do 5 rolls => (5/6)^5
+
+How about the probability of rolling at least one 1?
+We know that the probability of getting at least one of the many
+possible rolls is 1.
+So we know that the probability of getting at least one 1 must be 1 minus
+the probability of getting no ones: 1 - (5/6)^5
+'''
