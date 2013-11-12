@@ -1,6 +1,4 @@
-#!python2.7.5
 import os, errno
-
 
 def gen_contacts(a, b):
     
