@@ -48,16 +48,3 @@ if __name__ == '__main__':
 
     for i in prefix_set:
         copy_files(i, SRC)
-
-
-'''
-file.csv ->
-1
-2
-3
-
-folder A -> contact_1.txt, contact_2.txt, contact_3.txt
-folder B -> empty
-
-Result: files from A copied into B
-'''
