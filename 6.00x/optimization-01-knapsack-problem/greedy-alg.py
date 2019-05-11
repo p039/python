@@ -1,3 +1,5 @@
+# python 3.6.6
+
 class Item(object):
     def __init__(self, n, v, w):
         self.name = n
@@ -38,7 +40,7 @@ def density(item):
 def greedy(items, maxWeight, metric):
     knapsack = []
     totalWeight = 0
-    for item in sorted(items, key=metric, reverse=True):
+    for item in sorted(items, key=metric, reverse=True): #reverse=True == descending order
         w = item.getWeight()
         if w + totalWeight <= maxWeight:
             knapsack.append(item)
@@ -48,16 +50,16 @@ def greedy(items, maxWeight, metric):
 def testGreedy(items, maxWeight, metric):
     g = greedy(items, maxWeight, metric)
     value = sum(map(Item.getValue, g))
-    print 'Total: ', value
+    print("Total: %s" % (str(value)))
     for i in g:
-        print ' ', i
+        print(i)
 
 def testGreedys(items, maxWeight = 20):
-    print 'Metric - value, weight - ', maxWeight
+    #print 'Metric - value, weight - ', maxWeight
     testGreedy(items, maxWeight, value)
-    print 'Metric - weight, weight - ', maxWeight
+    #print 'Metric - weight, weight - ', maxWeight
     testGreedy(items, maxWeight, weight)
-    print 'Metric - density, weight - ', maxWeight
+    #print 'Metric - density, weight - ', maxWeight
     testGreedy(items, maxWeight, density)
 
 
