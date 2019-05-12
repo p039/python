@@ -29,21 +29,21 @@ def buildItems():
 
 def powerSet(items):
     N = len(items)
-    for i in xrange(2**N):
+    for i in range(2**N):
         combo = []
-        for j in xrange(N):
+        for j in range(N):
             if(i >> j) % 2 == 1:
                 combo.append(items[j])
         yield combo
 
 
-def testPowerSet(pset, maxWeight):
+def testPowerSet(power_set, max_weight):
     bestSet = None
     bestVal = 0.0
-    for set in pset:
+    for set in power_set:
         bVal = sum(map(Item.getValue, set))
         weight = sum(map(Item.getWeight, set))
-        if weight <= maxWeight and bVal > bestVal:
+        if weight <= max_weight and bVal > bestVal:
             bestSet = set
             bestVal = bVal
 
@@ -53,12 +53,12 @@ def testPowerSet(pset, maxWeight):
 def simPowerSet():
     items = buildItems()
     maxWeight = 25
-    pset = powerSet(items)
-    objSet, objVal = testPowerSet(pset, maxWeight)
-    print 'Total value: ', objVal
+    power_set = powerSet(items)
+    objSet, objVal = testPowerSet(power_set, maxWeight)
+    print("Best total value: %s" % (objVal))
 
     for item in objSet:
-        print ' ', item
+        print(item)
     
 
 if __name__ == '__main__':
